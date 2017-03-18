@@ -7,19 +7,22 @@ var books = [
         title: "Harry Potter",
         genre: "Magic",
         author: "J.K.Rowling",
+        bookId: 3,
         read: true
     },
      {
         title: "Holes",
         genre: "Comedy",
         author: "Louis Sachar",
-        read: false
+        bookId: 38709,
+        read: true
     },
      {
-        title: "You don't know JS",
+        title: "You Don't Know Js: This & Object Prototypes",
         genre: "Action",
         author: "Kyle Simpson",
-        read: false
+        bookId: 22221108,
+        read: true
     }
 ];
 

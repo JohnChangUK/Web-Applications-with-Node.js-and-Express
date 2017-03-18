@@ -38,6 +38,7 @@ var bookController = function(bookService, nav) {
 
                 collection.findOne({_id: id},
                     function (err, results) {
+                        if(results.bookId) {
                         bookService.getBookById(results.bookId,
                             function(err, book) {
                                 results.book = book;
@@ -46,8 +47,15 @@ var bookController = function(bookService, nav) {
                                 nav: nav,
                                 book: results
                              });
+                            });
+                        } else {
+                            res.render('bookView', {
+                                title: 'Books',
+                                nav: nav,
+                                book: results
 
                             });
+                        }
                     }
                 );
 
