@@ -40,7 +40,7 @@ var router = function(nav) {
 
       });
 
-      res.send('inserting books');
+      //res.send('inserting books');
     });
 
     return adminRouter;
