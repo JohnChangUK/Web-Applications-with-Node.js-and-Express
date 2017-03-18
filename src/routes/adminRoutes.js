@@ -10,15 +10,15 @@ var books = [
         read: true
     },
      {
-        title: "Harry Trotter",
+        title: "Holes",
         genre: "Comedy",
-        author: "J.K.Howling",
+        author: "Louis Sachar",
         read: false
     },
      {
-        title: "Harry Mopper",
+        title: "You don't know JS",
         genre: "Action",
-        author: "J.K.Cowling",
+        author: "Kyle Simpson",
         read: false
     }
 ];
