@@ -23,23 +23,23 @@ var passport = require('passport');
                   });
                 });
             });
-         
+      
         });
-        authRouter.route('/signIn')
+      authRouter.route('/signIn')
           .post(passport.authenticate('local', {
-            failureRedirect: '/'
+              failureRedirect: '/'
           }), function(req, res) {
-                res.redirect('/auth/profile');
+              res.redirect('/auth/profile');
         });
-        authRouter.route('/profile')
+      authRouter.route('/profile')
           .all(function(req, res, next) {
             if(!req.user) {
-              res.redirect('/');
+                res.redirect('/');
             }
             next();
           })
           .get(function(req, res) {
-            res.json(req.user);
+              res.json(req.user);
           });
       return authRouter;
   };
