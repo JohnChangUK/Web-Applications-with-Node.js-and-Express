@@ -26,15 +26,21 @@ var passport = require('passport');
          
         });
         authRouter.route('/signIn')
-        .post(passport.authenticate('local', {
-          failureRedirect: '/'
-        }), function(req, res) {
-              res.redirect('/auth/profile');
+          .post(passport.authenticate('local', {
+            failureRedirect: '/'
+          }), function(req, res) {
+                res.redirect('/auth/profile');
         });
         authRouter.route('/profile')
-        .get(function(req, res) {
-          res.json(req.user);
-        });
+          .all(function(req, res, next) {
+            if(!req.user) {
+              res.redirect('/');
+            }
+            next();
+          })
+          .get(function(req, res) {
+            res.json(req.user);
+          });
       return authRouter;
   };
 
